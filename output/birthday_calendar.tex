@@ -1,0 +1,698 @@
+
+\documentclass[table, landscape]{beamer}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{alltt}
+\usepackage{tikz}
+\usepackage{framed}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{marvosym}
+
+\usetikzlibrary{positioning,shapes,arrows}
+\usetikzlibrary{decorations.markings}
+
+\definecolor{lightblue}{rgb}{0.8,0.93,1.0} % color values Red, Green, Blue
+\definecolor{darkblue}{rgb}{0.4,0.3,1.0} % color values Red, Green, Blue
+\definecolor{Blue}{rgb}{0,0,1.0} % color values Red, Green, Blue
+\definecolor{darkgreen}{rgb}{0,0.7,0.2} % color values Red, Green, Blue
+\definecolor{Red}{rgb}{1,0,0} % color values Red, Green, Blue
+\definecolor{Pink}{rgb}{0.7,0,0.2}
+\definecolor{links}{HTML}{2A1B81}
+\definecolor{mydarkgreen}{HTML}{126215}
+\definecolor{mymaroon}{HTML}{800000}
+\definecolor{myindigo}{HTML}{4b0082}
+\title[Sujit]{{\color{mymaroon}  Birthday Calendar \\ \vspace*{-2cm}}}
+
+%\title[Sujit]{{\color{mymaroon} \setlength{\fboxrule}{2pt} } \\ Desktop Calendar \\ \vspace*{-2cm}}
+\author{}
+\institute{}
+
+\begin{document}
+
+\beamertemplatenavigationsymbolsempty
+\maketitle
+
+\newcommand{\highlight}[1]{{\color{Red}(#1)}}
+\newcommand{\comment}[1]{\begin{tiny}
+{\color{blue}(#1)}
+\end{tiny}}
+\newcommand{\myheader}[1]{
+	{\color{mymaroon}
+		\begin{Large}
+			\begin{center}
+				{#1}
+			\end{center}
+		\end{Large}
+	}
+}
+
+\newcommand{\myminorheader}[1]{
+	{\color{purple}
+		\begin{large}
+			{#1}
+		\end{large}
+	}
+}
+
+\newcommand{\monthcolour}{myindigo}
+\newcommand{\headercolour}{yellow!25}
+\newcommand{\phbordercolour}{mymaroon}
+\newcommand{\workingdaycolour}{black}
+\newcommand{\holidaycolour}{red}
+\newcommand{\weekendcolour}{mymaroon}
+
+\setbeamercolor{background canvas}{bg=violet!25}
+\fboxsep=2pt%padding thickness
+\fboxrule=2pt%border thickness
+
+\arrayrulecolor{red}
+\begin{frame}{\color{blue}Happy Birthday }
+{January 1}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name9} (RollNumber14)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{January 7}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name73} (RollNumber80)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{January 9}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name25} (RollNumber30)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{January 13}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name95} (RollNumber102)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{January 14}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name103} (RollNumber110)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{February 2}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name11} (RollNumber16)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{February 6}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name90} (RollNumber97)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{February 15}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name86} (RollNumber93)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{February 19}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name106} (RollNumber113)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{February 20}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name84} (RollNumber91)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{February 29}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name43} (RollNumber50)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{February 29}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name44} (RollNumber51)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{March 3}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name33} (RollNumber40)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{March 4}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name89} (RollNumber96)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{March 5}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name94} (RollNumber101)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{March 6}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name30} (RollNumber35)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{March 9}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Wish you a very happy birthday! \\ \vspace{0.5cm}{\Large name38} (RollNumber45)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{April 17}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name80} (RollNumber87)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{April 24}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name5} (RollNumber5)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{April 30}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name102} (RollNumber109)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{May 1}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name6} (RollNumber11)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{May 5}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name66} (RollNumber73)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{May 24}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name105} (RollNumber112)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{May 26}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name47} (RollNumber54)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{May 27}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name93} (RollNumber100)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{May 28}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name41} (RollNumber48)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{May 31}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name65} (RollNumber72)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 1}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name3} (RollNumber3)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 4}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name63} (RollNumber70)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{June 4}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name83} (RollNumber90)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{June 7}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name91} (RollNumber98)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 15}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name40} (RollNumber47)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{June 17}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name96} (RollNumber103)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{June 19}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name56} (RollNumber63)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 20}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name13} (RollNumber18)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 21}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name18} (RollNumber23)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{June 23}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name81} (RollNumber88)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 24}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name36} (RollNumber43)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{June 28}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name35} (RollNumber42)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{June 30}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name2} (RollNumber2)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{July 1}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name45} (RollNumber52)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{July 2}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name53} (RollNumber60)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{July 15}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name1} (RollNumber1)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{July 17}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name92} (RollNumber99)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{August 2}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name77} (RollNumber84)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{August 5}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Wish you a very happy birthday! \\ \vspace{0.5cm}{\Large name60} (RollNumber67)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{August 6}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name58} (RollNumber65)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{August 15}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name14} (RollNumber19)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{August 20}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name85} (RollNumber92)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{August 21}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name28} (RollNumber33)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{August 24}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name16} (RollNumber21)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{August 27}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name39} (RollNumber46)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{September 2}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name55} (RollNumber62)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{September 23}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name50} (RollNumber57)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{September 30}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name61} (RollNumber68)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{October 1}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name29} (RollNumber34)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{October 7}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name37} (RollNumber44)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{October 11}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name32} (RollNumber37)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{October 12}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name15} (RollNumber20)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{October 30}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name64} (RollNumber71)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 1}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name54} (RollNumber61)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{November 2}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name26} (RollNumber31)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 10}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name88} (RollNumber95)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 11}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Have a great birthday and a fabulous year! \\ \vspace{0.5cm}{\Large name59} (RollNumber66)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{November 13}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name82} (RollNumber89)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 14}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f8.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name19} (RollNumber24)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 27}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name51} (RollNumber58)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 27}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name104} (RollNumber111)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{November 28}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Many happy returns of the day! \\ \vspace{0.5cm}{\Large name17} (RollNumber22)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{December 2}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f9.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name78} (RollNumber85)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{December 6}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Many many happy returns of the day! \\ \vspace{0.5cm}{\Large name8} (RollNumber11)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{December 6}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name27} (RollNumber32)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{December 7}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f2.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name34} (RollNumber41)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{December 14}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f3.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name24} (RollNumber29)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{December 18}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f6.jpeg}
+
+Wish you a very happy birthday and an awesome year ahead! \\ \vspace{0.5cm}{\Large name49} (RollNumber56)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{December 19}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f7.jpeg}
+
+Happy birthday! \\ \vspace{0.5cm}{\Large name31} (RollNumber36)
+\end{center}
+\end{frame}
+\begin{frame}{\color{red}Happy Birthday }
+{December 26}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f1.jpeg}
+
+Wish you a very happy birthday! \\ \vspace{0.5cm}{\Large name4} (RollNumber4)
+\end{center}
+\end{frame}
+\begin{frame}{\color{blue}Happy Birthday }
+{December 29}
+\begin{center}
+\includegraphics[height=0.5\textheight]{flowers/f5.jpeg}
+
+Have a happy birthday and a great year ahead! \\ \vspace{0.5cm}{\Large name87} (RollNumber94)
+\end{center}
+\end{frame}
+
+\end{document}

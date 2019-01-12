@@ -1,11 +1,13 @@
 exception Birthday_Calendar_exception of string
 
 let bday_messages = [
-  "Happy birthday!";
-  "Wish you a very happy birthday!";
-  "Have a great birthday and a fabulous year!";
-  "Many happy returns of the day!";
-  "Many many happy returns of the day!"
+  "Happy birthday";
+  "Wish you a very happy birthday";
+  "Wish you a very happy birthday and an awesome year ahead";
+  "Have a great birthday and a fabulous year";
+  "Have a happy birthday and a great year ahead";
+  "Many happy returns of the day";
+  "Many many happy returns of the day"
 ]
 
 let month_num  = function
@@ -42,7 +44,8 @@ module Record = struct
   type record = {
     roll_num : string;
     name     : string;
-    birthday : Calendar.date
+    birthday : Calendar.date;
+    gender   : string;
   }
 
   let compare_birthdays bday1 bday2 =
@@ -78,7 +81,7 @@ let csv_to_record_list file_name =
     (
       fun row ->
         match row with
-          [ rn; name;  strdate ] ->
+          [ rn; name;  strdate; g ] ->
             let dlist = Str.split (Str.regexp "/") strdate in
             begin
               match dlist with
@@ -90,7 +93,8 @@ let csv_to_record_list file_name =
                       (int_of_string strd),
                       (month_of_int (int_of_string strm)),
                       (int_of_string stry)
-                    )
+                    );
+                    Record.gender = g;
                   }
               | _ -> failwith ("Couldn't understand date " ^ strdate)
             end
@@ -105,9 +109,11 @@ let pick_from_list l =
 let birthday_frame flowers r =
   let Calendar.Date(d, m, _) = r.Record.birthday in
   let bday = (Calendar.string_of_month m) ^ " " ^ (string_of_int d) in
-  let slide_header = "\\begin{frame}{Happy Birthday " ^ r.Record.name ^ "}\n{" ^
+  let colour = if r.Record.gender = "M" then "blue" else "red" in
+  let slide_header = "\\begin{frame}{\\color{" ^ colour ^ "}Happy Birthday " ^ "}\n{" ^
     bday ^ "}\n\\begin{center}\n"
-  and msg = (pick_from_list bday_messages) ^ r.Record.name
+  and msg = (pick_from_list bday_messages) ^ "! \\\\ \\vspace{0.5cm}{\Large " ^
+    r.Record.name ^ "} (" ^ r.Record.roll_num ^ ")"
   and flower = (pick_from_list flowers) in
   let flower_image = "\\includegraphics[height=0.5\\textheight]{flowers/" ^ flower ^ "}\n\n"
   and slide_footer = "\n\\end{center}\n\\end{frame}\n"
@@ -139,8 +145,12 @@ let gen_latex_file latex =
     close_out ochan
 
 let gen_birthday_calendar () =
+  let num_of_args = Array.length Sys.argv in
+  if num_of_args <> 2 then
+    print_string "Exactly one command-line argument required.\n"
+  else
   let flowers = Array.to_list (Sys.readdir "output/flowers")
-  and records = csv_to_record_list "input/2018/birthdays.csv" in
+  and records = csv_to_record_list Sys.argv.(1) in
   let sorted_records = (Record.sort_records records) in
   let frames = List.map (birthday_frame flowers) sorted_records in
   let all_wishes = List.fold_left (fun x y -> x ^ y) "" frames in
@@ -148,45 +158,6 @@ let gen_birthday_calendar () =
   let after = "\n" ^ "\\end{document}" in
   let latex = before ^ all_wishes ^ after in
   gen_latex_file latex
-
-
-let t1 () =
-  let r1 = {
-    Record.roll_num = "imt2018001";
-    Record.name     = "student 1";
-    Record.birthday = Calendar.Date(1, Calendar.January, 1990)
-  }
-  and r2 = {
-    Record.roll_num = "imt2018002";
-    Record.name     = "student 2";
-    Record.birthday = Calendar.Date(31, Calendar.March, 1989)
-  }
-  and r3 = {
-    Record.roll_num = "imt2018003";
-    Record.name     = "student 3";
-    Record.birthday = Calendar.Date(1, Calendar.December, 1990)
-  }
-  and r4 = {
-    Record.roll_num = "imt2018004";
-    Record.name     = "student 4";
-    Record.birthday = Calendar.Date(28, Calendar.February, 1989)
-  }
-  in
-  let records = [ r1; r2; r3; r4 ] in
-  List.iter (
-    fun r -> print_endline (Record.string_of_record r)
-  ) (Record.sort_records records)
-
-let t2 () =
-  let records = csv_to_record_list "input/2018/imt2014.csv" in
-  List.iter (
-    fun r -> print_endline (Record.string_of_record r)
-  ) (Record.sort_records records)
-
-let t3 () =
-  let dir = "flowers" in
-  let children = Sys.readdir dir in
-  Array.iter print_endline children;;
 
 let main () =
   gen_birthday_calendar ()
